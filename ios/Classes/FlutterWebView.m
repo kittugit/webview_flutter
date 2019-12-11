@@ -274,7 +274,7 @@
   NSString* keyWithHash = [key stringByAppendingString:@"/#"];
   NSLog(@"\n keyWithHash: %@", keyWithHash);
   NSString* fullKey = [keyWithHash stringByAppendingString:urlBookmark];
-  NSLog(@"\n fulKey: %@", fullKey);
+  NSLog(@"\n FullKey: %@", fullKey);
   NSURL* nsUrl = [[NSBundle mainBundle] URLForResource:key withExtension:nil];
   if (!nsUrl) {
     return false;
