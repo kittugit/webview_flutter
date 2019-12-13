@@ -263,18 +263,18 @@
 
 - (bool)loadUrl:(NSString*)url {
   NSLog(@"\nwebview_flutter: loadingurl: %@", url);
-   NSArray* urlArray = [url componentsSeparatedByString:@"/#"];
-  NSLog(@"\n urlArray: %@", urlArray);
-  NSString* urlKey = [urlArray objectAtIndex:0]; 
-  NSLog(@"\n urlKey: %@", urlKey);
-  NSString* urlBookmark = [urlArray objectAtIndex:1]; 
-  NSLog(@"\n urlBookmark: %@", urlBookmark);
-  NSString* key = [_registrar lookupKeyForAsset:urlKey];
+  // NSArray* urlArray = [url componentsSeparatedByString:@"/#"];
+  //NSLog(@"\n urlArray: %@", urlArray);
+  //NSString* urlKey = [urlArray objectAtIndex:0]; 
+  //NSLog(@"\n urlKey: %@", urlKey);
+  //NSString* urlBookmark = [urlArray objectAtIndex:1]; 
+  //NSLog(@"\n urlBookmark: %@", urlBookmark);
+  NSString* key = [_registrar lookupKeyForAsset:url];
   NSLog(@"\n key: %@", key);
-  NSString* keyWithHash = [key stringByAppendingString:@"/#"];
-  NSLog(@"\n keyWithHash: %@", keyWithHash);
-  NSString* fullKey = [keyWithHash stringByAppendingString:urlBookmark];
-  NSLog(@"\n FullKey: %@", fullKey);
+  // NSString* keyWithHash = [key stringByAppendingString:@"/#"];
+  // NSLog(@"\n keyWithHash: %@", keyWithHash);
+  // NSString* fullKey = [keyWithHash stringByAppendingString:urlBookmark];
+  // NSLog(@"\n FullKey: %@", fullKey);
   NSURL* nsUrl = [[NSBundle mainBundle] URLForResource:key withExtension:nil];
   if (!nsUrl) {
     return false;
