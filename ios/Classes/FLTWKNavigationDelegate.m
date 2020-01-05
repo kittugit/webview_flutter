@@ -59,4 +59,10 @@
 - (void)webView:(WKWebView*)webView didFinishNavigation:(WKNavigation*)navigation {
   [_methodChannel invokeMethod:@"onPageFinished" arguments:@{@"url" : webView.URL.absoluteString}];
 }
+
+- (void)webView:(WKWebView *)webView didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential *credential))completionHandler {
+  NSLog(@"Allow all");
+ NSURLCredential * credential = [[NSURLCredential alloc] initWithTrust:[challenge protectionSpace].serverTrust];
+completionHandler(NSURLSessionAuthChallengeUseCredential, credential);
+  }
 @end
